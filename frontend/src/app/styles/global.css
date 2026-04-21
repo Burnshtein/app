@@ -1,0 +1,473 @@
+/* app/styles/global.css */
+/* Soft Royal — спокойствие, роялти, премиум */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif;
+  background: #fafafc; /* Теплый, очень светлый фон */
+  color: #1c1c1e;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ========== ШАПКА — полупрозрачная роскошь ========== */
+.header {
+  background: rgba(250, 250, 252, 0.92);
+  backdrop-filter: saturate(180%) blur(24px);
+  border-bottom: 0.5px solid rgba(60, 60, 67, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 12px 24px;
+}
+
+.logo {
+  font-size: 21px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #1c1c1e 0%, #3a3a3e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.5px;
+}
+
+.header nav {
+  display: flex;
+  gap: 32px;
+}
+
+.header nav a {
+  text-decoration: none;
+  color: #1c1c1e;
+  font-weight: 450;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+  transition: all 0.2s ease;
+  opacity: 0.7;
+}
+
+.header nav a:hover {
+  opacity: 1;
+  color: #3a6ea5; /* Спокойный королевский синий */
+}
+
+/* ========== КНОПКИ — бархатные ========== */
+button {
+  background: #2c3e50; /* Глубокий, спокойный графит/синий */
+  color: #ffffff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.3s cubic-bezier(0.25, 0.1, 0.15, 1);
+  letter-spacing: -0.2px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.02);
+}
+
+button:hover {
+  background: #3a5a72; /* Светлеет к благородному синему */
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(44, 62, 80, 0.15);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+/* Вторичная кнопка — прозрачная элегантность */
+button.secondary {
+  background: transparent;
+  border: 1px solid #2c3e50;
+  color: #2c3e50;
+  box-shadow: none;
+}
+
+button.secondary:hover {
+  background: rgba(44, 62, 80, 0.04);
+  transform: translateY(-1px);
+  box-shadow: none;
+}
+
+/* ========== КАРТОЧКА — мраморная ========== */
+.product-card {
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 28px 24px;
+  transition: all 0.4s cubic-bezier(0.2, 0, 0, 1);
+  border: 1px solid rgba(60, 60, 67, 0.06);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.product-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #3a6ea5, #7a9bb5, #3a6ea5);
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover::before {
+  transform: scaleX(1);
+}
+
+.product-card:hover {
+  border-color: rgba(58, 110, 165, 0.2);
+  box-shadow: 0 24px 40px -16px rgba(44, 62, 80, 0.12);
+  transform: translateY(-4px);
+}
+
+.product-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #1c1c1e;
+  letter-spacing: -0.3px;
+}
+
+.product-card p {
+  color: #6c6c70;
+  font-size: 15px;
+  line-height: 1.4;
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.product-card .price {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1c1c1e;
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+}
+
+.product-card .price::before {
+  content: '$';
+  font-size: 20px;
+  font-weight: 500;
+  margin-right: 3px;
+  color: #3a6ea5;
+}
+
+/* ========== СЕТКА ========== */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 32px;
+  padding: 40px 0;
+}
+
+/* ========== ГЕРОЙ — Королевский прием ========== */
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #f5f5f8 0%, #ffffff 100%);
+  border-radius: 48px;
+  margin: 40px auto;
+  max-width: 1100px;
+  border: 0.5px solid rgba(60, 60, 67, 0.06);
+}
+
+.hero h1 {
+  font-size: 68px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #1c1c1e 0%, #3a5a72 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+
+.hero p {
+  font-size: 26px;
+  color: #6c6c70;
+  margin-bottom: 40px;
+  font-weight: 400;
+  letter-spacing: -0.2px;
+}
+
+/* ========== ФОРМЫ — элегантный ввод ========== */
+.form {
+  max-width: 480px;
+  margin: 80px auto;
+  padding: 48px;
+  background: #ffffff;
+  border-radius: 36px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(60, 60, 67, 0.06);
+}
+
+.form h2 {
+  text-align: center;
+  margin-bottom: 32px;
+  font-size: 32px;
+  font-weight: 600;
+  color: #1c1c1e;
+  letter-spacing: -0.5px;
+}
+
+.form input {
+  width: 100%;
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  background: #f5f5f7;
+  border: 1px solid rgba(60, 60, 67, 0.08);
+  border-radius: 20px;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  color: #1c1c1e;
+  font-family: inherit;
+}
+
+.form input:focus {
+  outline: none;
+  border-color: #3a6ea5;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(58, 110, 165, 0.08);
+}
+
+/* ========== КОРЗИНА — тихая роскошь ========== */
+.cart-drawer {
+  background: #ffffff;
+  border-left: 1px solid rgba(60, 60, 67, 0.06);
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.02);
+}
+
+.cart-item {
+  background: #fafafc;
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(60, 60, 67, 0.04);
+  transition: all 0.2s ease;
+}
+
+.cart-item:hover {
+  border-color: rgba(58, 110, 165, 0.2);
+  background: #ffffff;
+  transform: translateX(-4px);
+}
+
+.cart-item h4 {
+  color: #1c1c1e;
+  margin-bottom: 6px;
+  font-size: 16px;
+  font-weight: 590;
+}
+
+.cart-item p {
+  color: #6c6c70;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+/* Удалить из корзины — нежно, без агрессии */
+.cart-item button {
+  background: transparent;
+  color: #8e8e93;
+  padding: 6px 12px;
+  font-size: 13px;
+  box-shadow: none;
+  border: 0.5px solid rgba(60, 60, 67, 0.1);
+}
+
+.cart-item button:hover {
+  background: rgba(60, 60, 67, 0.04);
+  color: #3a6ea5;
+  transform: translateY(-1px);
+}
+
+/* ========== ЗАГРУЗКА — спокойная ========== */
+.loading {
+  text-align: center;
+  padding: 80px;
+  font-size: 17px;
+  color: #8e8e93;
+}
+
+.loading::after {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  margin-left: 12px;
+  border: 2px solid rgba(58, 110, 165, 0.1);
+  border-top-color: #3a6ea5;
+  border-radius: 50%;
+  animation: spin 0.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ========== ОШИБКА — мягкая, не красная ========== */
+.error {
+  background: rgba(235, 180, 170, 0.08);
+  border: 1px solid rgba(200, 130, 110, 0.2);
+  color: #b15e4a;
+  text-align: center;
+  padding: 16px;
+  border-radius: 24px;
+  margin: 32px auto;
+  max-width: 500px;
+  font-weight: 500;
+  backdrop-filter: blur(4px);
+}
+
+/* ========== ЗАГОЛОВКИ ========== */
+.page-title {
+  font-size: 48px;
+  font-weight: 700;
+  margin: 48px 0 24px;
+  color: #1c1c1e;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #1c1c1e, #5a6e7a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ========== ИКОНКА КОРЗИНЫ — без красного ========== */
+.cart-icon {
+  position: relative;
+  cursor: pointer;
+  font-size: 24px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #1c1c1e;
+  opacity: 0.8;
+}
+
+.cart-icon:hover {
+  color: #3a6ea5;
+  transform: scale(1.02);
+  opacity: 1;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -10px;
+  right: -14px;
+  background: #3a6ea5; /* Спокойный королевский синий, НЕ КРАСНЫЙ */
+  color: white;
+  border-radius: 50%;
+  min-width: 20px;
+  height: 20px;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  padding: 0 5px;
+  box-shadow: 0 2px 8px rgba(58, 110, 165, 0.2);
+  animation: gentlePulse 0.3s ease;
+}
+
+@keyframes gentlePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* ========== ССЫЛКИ ========== */
+a {
+  text-decoration: none;
+  color: #3a6ea5;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #2c5a8a;
+}
+
+/* ========== АДАПТИВ ========== */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 44px;
+  }
+  
+  .hero p {
+    font-size: 20px;
+  }
+  
+  .hero {
+    padding: 60px 20px;
+    margin: 16px;
+  }
+  
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+    padding: 24px 0;
+  }
+  
+  .header-content {
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px 20px;
+  }
+  
+  .form {
+    margin: 40px 20px;
+    padding: 32px 24px;
+  }
+  
+  .page-title {
+    font-size: 36px;
+    margin: 32px 0 16px;
+  }
+}
+
+/* ========== ДЕТАЛИ ========== */
+::selection {
+  background: rgba(58, 110, 165, 0.12);
+  color: #1c1c1e;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f5f7;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c6c6c8;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a6;
+}
