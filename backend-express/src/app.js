@@ -1,8 +1,8 @@
 // src/app.js
 const express = require('express');
 const cors = require('cors');
-const authRoutes = require('./api/routes/authRoutes');
-const productRoutes = require('./api/routes/productRoutes');
+const authRoutes = require('./routes/authRoutes');
+const productRoutes = require('./routes/productRoutes');
 
 const app = express();
 

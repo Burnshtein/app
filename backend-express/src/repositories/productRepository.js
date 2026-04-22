@@ -1,5 +1,5 @@
 // domain/repositories/productRepository.js
-const db = require('../../infrastructure/database/sqLite');
+const db = require('../Utils/database/sqLite');
 const Product = require('../models/Product');
 
 const findAll = () => {
