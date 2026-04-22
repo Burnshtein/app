@@ -1,12 +1,12 @@
-// domain/repositories/productRepository.js
-const db = require('../Utils/database/sqLite');
+const db = require('../utils/database/sqLite');
 const Product = require('../models/Product');
 
 const findAll = () => {
   return new Promise((resolve, reject) => {
     db.all('SELECT * FROM products', (err, rows) => {
       if (err) reject(err);
-      resolve(rows.map(row => new Product(row.id, row.title, row.price, row.description, row.image)));
+      if (!rows) resolve([]);
+      else resolve(rows.map(row => new Product(row.id, row.title, row.price, row.description, row.image)));
     });
   });
 };

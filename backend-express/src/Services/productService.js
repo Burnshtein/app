@@ -1,5 +1,4 @@
-// useCases/productUseCases.js
-const productRepository = require('../../domain/repositories/productRepository');
+const productRepository = require('../repositories/productRepository');
 
 const getProducts = async () => {
   return await productRepository.findAll();

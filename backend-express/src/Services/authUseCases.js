@@ -1,7 +1,7 @@
 // useCases/authUseCases.js
-const userRepository = require('../../domain/repositories/userRepository');
-const { hashPassword, comparePassword } = require('../Utils/hashing/bcryptHasher');
-const { generateToken } = require('../Utils/auth/jwtHandler');
+const userRepository = require('../repositories/userRepository');
+const { hashPassword, comparePassword } = require('../utils/hashing/bcryptHasher');
+const { generateToken } = require('../utils/auth/jwtHandler');
 
 const register = async (email, username, password) => {
   const existing = await userRepository.findByEmail(email);

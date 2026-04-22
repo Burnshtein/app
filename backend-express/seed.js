@@ -1,5 +1,5 @@
 // seed.js
-const db = require('./infrastructure/database/sqLite');
+const db = require('./src/utils/database/sqLite');
 
 const products = [
   { title: 'Ноутбук', price: 45000, description: 'Мощный ноутбук', image: null },

@@ -1,5 +1,5 @@
 // api/controllers/authController.js
-const authUseCases = require('../services/authUseCases');
+const authUseCases = require('../../services/authUseCases');
 
 const register = async (req, res) => {
   try {

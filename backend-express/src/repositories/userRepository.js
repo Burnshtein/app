@@ -1,5 +1,4 @@
-// domain/repositories/userRepository.js
-const db = require('../../infrastructure/database/sqLite');
+const db = require('../utils/database/sqLite');
 const User = require('../models/User');
 
 const findByEmail = (email) => {

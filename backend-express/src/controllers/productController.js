@@ -1,5 +1,5 @@
 // api/controllers/productController.js
-const productUseCases = require('../../useCases/productUseCases');
+const productUseCases = require('../services/productService');
 
 const getProducts = async (req, res) => {
   try {
