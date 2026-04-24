@@ -1,0 +1,39 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int       @id @default(autoincrement())
+  email     String    @unique
+  password  String
+  username  String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+
+  cartItems CartItem[]
+}
+
+model Product {
+  id          Int     @id @default(autoincrement())
+  title       String
+  price       Int
+  description String
+
+  cartItems CartItem[]
+}
+
+model CartItem {
+  id        Int     @id @default(autoincrement())
+  quantity  Int     @default(1)
+  userId    Int
+  productId Int
+  createdAt DateTime @default(now())
+
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+}
